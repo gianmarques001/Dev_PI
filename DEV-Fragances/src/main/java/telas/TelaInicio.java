@@ -42,6 +42,7 @@ public class TelaInicio extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(153, 255, 0));
 
         btnTelaAdmin.setBackground(new java.awt.Color(27, 0, 75));
+        btnTelaAdmin.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         btnTelaAdmin.setForeground(new java.awt.Color(255, 255, 255));
         btnTelaAdmin.setText("Acessar como Administrador");
         btnTelaAdmin.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -52,6 +53,7 @@ public class TelaInicio extends javax.swing.JFrame {
         });
 
         btnTelaEstoque.setBackground(new java.awt.Color(27, 0, 75));
+        btnTelaEstoque.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         btnTelaEstoque.setForeground(new java.awt.Color(255, 255, 255));
         btnTelaEstoque.setText("Acessar Estoque Disponivel");
         btnTelaEstoque.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));

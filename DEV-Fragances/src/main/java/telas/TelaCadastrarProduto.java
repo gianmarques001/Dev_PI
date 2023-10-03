@@ -42,32 +42,39 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(219, 182, 238));
 
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Gabriola", 1, 24)); // NOI18N
         jLabel1.setText("Cadastrar Produto");
 
-        jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         jLabel2.setText("Nome do Produto:");
 
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         jLabel3.setText("Preço do Produto:");
 
         txtPrecoProduto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
 
-        jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         jLabel4.setText("Quantidade do Produto:");
 
-        jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         jLabel5.setText("Categoria do Produto:");
 
+        cbCategorias.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbCategorias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Perfumaria", "Corpo e Banho", "Maquiagem", "Cabelo", "SkinCare" }));
+        cbCategorias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbCategoriasActionPerformed(evt);
+            }
+        });
 
+        btnCadastrarProduto.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnCadastrarProduto.setText("Cadastrar");
         btnCadastrarProduto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        btnCadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarProdutoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -95,7 +102,7 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(btnCadastrarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(113, 113, 113)))
-                .addContainerGap(312, Short.MAX_VALUE))
+                .addContainerGap(332, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,7 +127,7 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
                     .addComponent(cbCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(101, 101, 101)
                 .addComponent(btnCadastrarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,6 +143,14 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cbCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbCategoriasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbCategoriasActionPerformed
+
+    private void btnCadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCadastrarProdutoActionPerformed
 
     /**
      * @param args the command line arguments

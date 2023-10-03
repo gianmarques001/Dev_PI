@@ -38,6 +38,7 @@ public class TelaProdutos extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1024, 600));
 
         btnAcessarEstoque.setBackground(new java.awt.Color(27, 0, 75));
+        btnAcessarEstoque.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         btnAcessarEstoque.setForeground(new java.awt.Color(255, 255, 255));
         btnAcessarEstoque.setText("Acessar Estoque");
         btnAcessarEstoque.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -48,6 +49,7 @@ public class TelaProdutos extends javax.swing.JFrame {
         });
 
         btnCadastrarProduto.setBackground(new java.awt.Color(27, 0, 75));
+        btnCadastrarProduto.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         btnCadastrarProduto.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastrarProduto.setText("Cadastrar Produto");
         btnCadastrarProduto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
