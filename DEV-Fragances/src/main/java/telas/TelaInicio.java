@@ -131,7 +131,7 @@ public class TelaInicio extends javax.swing.JFrame {
         dispose(); // Fecha o JFrame atual
 
         //Abre o novo 
-        TelaAdmin newFrame = new TelaAdmin();
+        TelaLogin newFrame = new TelaLogin();
 
         //   newFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Fecha apenas o JFrame secundário
         newFrame.setVisible(true);

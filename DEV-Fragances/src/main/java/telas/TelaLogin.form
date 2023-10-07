@@ -114,7 +114,7 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="txtAdmin" min="-2" pref="137" max="-2" attributes="0"/>
+                                      <Component id="txtLogin" min="-2" pref="137" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -140,7 +140,7 @@
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtAdmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtLogin" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -173,7 +173,7 @@
             </Component>
             <Component class="javax.swing.JPasswordField" name="txtSenha">
             </Component>
-            <Component class="javax.swing.JTextField" name="txtAdmin">
+            <Component class="javax.swing.JTextField" name="txtLogin">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
