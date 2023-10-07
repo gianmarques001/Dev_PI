@@ -30,14 +30,14 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnTelaAdmin = new javax.swing.JButton();
-        btnTelaEstoque = new javax.swing.JButton();
+        btnTelaCadastroUsuario = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnTelaEstoque = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(219, 182, 238));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(1024, 600));
-        setPreferredSize(new java.awt.Dimension(1024, 600));
 
         jPanel1.setBackground(new java.awt.Color(219, 182, 238));
         jPanel1.setForeground(new java.awt.Color(153, 255, 0));
@@ -53,10 +53,23 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
 
+        btnTelaCadastroUsuario.setBackground(new java.awt.Color(27, 0, 75));
+        btnTelaCadastroUsuario.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
+        btnTelaCadastroUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        btnTelaCadastroUsuario.setText("Cadastrar");
+        btnTelaCadastroUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        btnTelaCadastroUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTelaCadastroUsuarioActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\tigor\\Downloads\\Logo.png")); // NOI18N
+
         btnTelaEstoque.setBackground(new java.awt.Color(27, 0, 75));
         btnTelaEstoque.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         btnTelaEstoque.setForeground(new java.awt.Color(255, 255, 255));
-        btnTelaEstoque.setText("Acessar Estoque Disponivel");
+        btnTelaEstoque.setText("Acessar estoque disponivel");
         btnTelaEstoque.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btnTelaEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,22 +77,21 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\tigor\\Downloads\\Logo.png")); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(338, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnTelaEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTelaAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(314, 314, 314))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(162, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnTelaCadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTelaEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTelaAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(314, 314, 314))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,9 +99,11 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(131, 131, 131)
                 .addComponent(btnTelaAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(91, 91, 91)
+                .addGap(48, 48, 48)
                 .addComponent(btnTelaEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(200, Short.MAX_VALUE))
+                .addGap(50, 50, 50)
+                .addComponent(btnTelaCadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -107,9 +121,9 @@ public class TelaInicio extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnTelaEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTelaEstoqueActionPerformed
+    private void btnTelaCadastroUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTelaCadastroUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnTelaEstoqueActionPerformed
+    }//GEN-LAST:event_btnTelaCadastroUsuarioActionPerformed
 
     private void btnTelaAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTelaAdminActionPerformed
         // TODO add your handling code here:
@@ -123,6 +137,10 @@ public class TelaInicio extends javax.swing.JFrame {
         newFrame.setVisible(true);
         
     }//GEN-LAST:event_btnTelaAdminActionPerformed
+
+    private void btnTelaEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTelaEstoqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTelaEstoqueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,6 +179,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnTelaAdmin;
+    private javax.swing.JButton btnTelaCadastroUsuario;
     private javax.swing.JButton btnTelaEstoque;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
