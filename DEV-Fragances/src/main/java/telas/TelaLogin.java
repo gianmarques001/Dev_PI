@@ -50,7 +50,6 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1024, 600));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabel1.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         jLabel1.setText("Admin:");
@@ -112,8 +111,6 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\tigor\\Downloads\\Logo.png")); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -155,6 +152,12 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(txtLogin.getText().equals("admin") && new String( txtSenha.getPassword()).equals("admin")){
             JOptionPane.showMessageDialog(null, "Logado com sucesso!");
+            
+            dispose();
+            
+            viewAdmin telaAdm = new viewAdmin();
+            telaAdm.setVisible(true);
+            
         }
         else if (txtLogin.getText().equalsIgnoreCase("") || txtSenha.getPassword().length == 0) {
             JOptionPane.showMessageDialog(null, "Campos Vazios");
