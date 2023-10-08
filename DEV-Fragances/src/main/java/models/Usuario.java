@@ -4,12 +4,12 @@ package models;
  *
  * @author tigor
  */
-public abstract class Usuario {
+public class Usuario {
 
-    protected String nome;
-    protected String cpf;
-    protected String email;
-    protected String senha;
+    private String nome;
+    private String cpf;
+    private String email;
+    private String senha;
 
     public String getNome() {
         return nome;

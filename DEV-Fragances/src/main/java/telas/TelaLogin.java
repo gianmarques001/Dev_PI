@@ -50,6 +50,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1024, 600));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabel1.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         jLabel1.setText("Admin:");

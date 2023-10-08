@@ -68,6 +68,7 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
 
         btnCadastrarUsuario.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         btnCadastrarUsuario.setText("Cadastrar");
+        btnCadastrarUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         btnCadastrarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastrarUsuarioActionPerformed(evt);
