@@ -287,46 +287,73 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comprar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMilionComprarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnKenzoComprar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comprar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKenzoComprarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnLavieComprar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comprar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLavieComprarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnJadoreComprar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comprar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnJadoreComprarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnCocoComprar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comprar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCocoComprarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnDolceComprar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comprar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDolceComprarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnLightComprar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comprar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLightComprarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnDiorComprar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comprar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDiorComprarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnJCarolinaComprar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Comprar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnJCarolinaComprarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JSpinner" name="spiLacome">
               <Properties>

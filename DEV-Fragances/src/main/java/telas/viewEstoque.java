@@ -129,22 +129,67 @@ public class viewEstoque extends javax.swing.JFrame {
         });
 
         btnMilionComprar.setText("Comprar");
+        btnMilionComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMilionComprarActionPerformed(evt);
+            }
+        });
 
         btnKenzoComprar.setText("Comprar");
+        btnKenzoComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKenzoComprarActionPerformed(evt);
+            }
+        });
 
         btnLavieComprar.setText("Comprar");
+        btnLavieComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLavieComprarActionPerformed(evt);
+            }
+        });
 
         btnJadoreComprar.setText("Comprar");
+        btnJadoreComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnJadoreComprarActionPerformed(evt);
+            }
+        });
 
         btnCocoComprar.setText("Comprar");
+        btnCocoComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCocoComprarActionPerformed(evt);
+            }
+        });
 
         btnDolceComprar.setText("Comprar");
+        btnDolceComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDolceComprarActionPerformed(evt);
+            }
+        });
 
         btnLightComprar.setText("Comprar");
+        btnLightComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLightComprarActionPerformed(evt);
+            }
+        });
 
         btnDiorComprar.setText("Comprar");
+        btnDiorComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDiorComprarActionPerformed(evt);
+            }
+        });
 
         btnJCarolinaComprar.setText("Comprar");
+        btnJCarolinaComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnJCarolinaComprarActionPerformed(evt);
+            }
+        });
 
         spiLacome.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
         spiLacome.setToolTipText("");
@@ -387,7 +432,7 @@ public class viewEstoque extends javax.swing.JFrame {
     private void btnLacomeComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLacomeComprarActionPerformed
         int value = spiLacome.getValue().hashCode();
         
-        if (value >50){
+        if (value < 1){
             JOptionPane.showMessageDialog(null, "Esse produto só possui 50 unidades, escolha um valor menor que esse e faça sua reserva.");
         }
         else{
@@ -408,6 +453,105 @@ public class viewEstoque extends javax.swing.JFrame {
     private void spiLacomeHierarchyChanged(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_spiLacomeHierarchyChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_spiLacomeHierarchyChanged
+
+    private void btnMilionComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMilionComprarActionPerformed
+                int value = spiMilion.getValue().hashCode();
+        
+        if (value < 1){
+            JOptionPane.showMessageDialog(null, "Escolha ao menos 1 unidade e faça sua reserva");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Compra realizada com sucesso!");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMilionComprarActionPerformed
+
+    private void btnKenzoComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKenzoComprarActionPerformed
+                int value = spiKenzo.getValue().hashCode();
+        
+        if (value < 1){
+            JOptionPane.showMessageDialog(null, "Escolha ao menos 1 unidade e faça sua reserva");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Compra realizada com sucesso!");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_btnKenzoComprarActionPerformed
+
+    private void btnLavieComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLavieComprarActionPerformed
+        int value = spiLavie.getValue().hashCode();
+        
+        if (value < 1){
+            JOptionPane.showMessageDialog(null, "Escolha ao menos 1 unidade e faça sua reserva");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Compra realizada com sucesso!");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLavieComprarActionPerformed
+
+    private void btnCocoComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCocoComprarActionPerformed
+        int value = spiCoco.getValue().hashCode();
+        
+        if (value < 1){
+            JOptionPane.showMessageDialog(null, "Escolha ao menos 1 unidade e faça sua reserva");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Compra realizada com sucesso!");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCocoComprarActionPerformed
+
+    private void btnJadoreComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJadoreComprarActionPerformed
+        int value = spiJadore.getValue().hashCode();
+        
+        if (value < 1){
+            JOptionPane.showMessageDialog(null, "Escolha ao menos 1 unidade e faça sua reserva");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Compra realizada com sucesso!");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_btnJadoreComprarActionPerformed
+
+    private void btnLightComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLightComprarActionPerformed
+        int value = spiLight.getValue().hashCode();
+        
+        if (value < 1){
+            JOptionPane.showMessageDialog(null, "Escolha ao menos 1 unidade e faça sua reserva");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Compra realizada com sucesso!");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLightComprarActionPerformed
+
+    private void btnDolceComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDolceComprarActionPerformed
+        int value = spiDolce.getValue().hashCode();
+        
+        if (value < 1){
+            JOptionPane.showMessageDialog(null, "Escolha ao menos 1 unidade e faça sua reserva");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Compra realizada com sucesso!");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDolceComprarActionPerformed
+
+    private void btnJCarolinaComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJCarolinaComprarActionPerformed
+        int value = spiCarolina.getValue().hashCode();
+        
+        if (value < 1){
+            JOptionPane.showMessageDialog(null, "Escolha ao menos 1 unidade e faça sua reserva");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Compra realizada com sucesso!");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_btnJCarolinaComprarActionPerformed
+
+    private void btnDiorComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiorComprarActionPerformed
+        int value = spiDior.getValue().hashCode();
+        
+        if (value < 1){
+            JOptionPane.showMessageDialog(null, "Escolha ao menos 1 unidade e faça sua reserva");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Compra realizada com sucesso!");
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDiorComprarActionPerformed
 
     /**
      * @param args the command line arguments
