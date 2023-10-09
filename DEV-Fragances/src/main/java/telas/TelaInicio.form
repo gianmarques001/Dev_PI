@@ -61,13 +61,13 @@
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="162" max="32767" attributes="0"/>
+                  <EmptySpace pref="258" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="btnTelaCadastroUsuario" min="-2" pref="548" max="-2" attributes="0"/>
-                      <Component id="btnTelaEstoque" min="-2" pref="548" max="-2" attributes="0"/>
                       <Component id="btnTelaAdmin" min="-2" pref="548" max="-2" attributes="0"/>
+                      <Component id="btnTelaEstoque" min="-2" pref="548" max="-2" attributes="0"/>
+                      <Component id="btnTelaCadastroUsuario" min="-2" pref="548" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="314" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -75,13 +75,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
                   <Component id="btnTelaAdmin" min="-2" pref="64" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   <Component id="btnTelaEstoque" min="-2" pref="64" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                   <Component id="btnTelaCadastroUsuario" min="-2" pref="64" max="-2" attributes="0"/>
-                  <EmptySpace pref="129" max="32767" attributes="0"/>
+                  <EmptySpace pref="180" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

@@ -6,53 +6,55 @@ package models;
 
 /**
  *
- * @author giancarlomarques
+ * @author tigor
  */
 public class Produto {
-    
-    private int id;
-    private String nome;
-    private double preco;
+    private String id;
     private int qtd;
+    private float preco;
 
-    public int getId() {
+    /**
+     * @return the id
+     */
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    /**
+     * @param id the id to set
+     */
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
+    /**
+     * @return the qtd
+     */
     public int getQtd() {
         return qtd;
     }
 
+    /**
+     * @param qtd the qtd to set
+     */
     public void setQtd(int qtd) {
         this.qtd = qtd;
     }
-   
-    
-    public Produto(String nome, double preco, int qtd){
-        this.nome = nome;
-        this.preco = preco;
-        this.qtd = qtd;
+
+    /**
+     * @return the preco
+     */
+    public float getPreco() {
+        return preco;
     }
+
+    /**
+     * @param preco the preco to set
+     */
+    public void setPreco(float preco) {
+        this.preco = preco;
+    }
+    
     
     
 }

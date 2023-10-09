@@ -6,10 +6,12 @@ package models;
  */
 public class Usuario {
 
+    private String id;
     private String nome;
     private String cpf;
-    private String email;
-    private String senha;
+    protected String email;
+    private String perfil;
+    protected String senha;
 
     public String getNome() {
         return nome;
@@ -41,6 +43,34 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    /**
+     * @return the id
+     */
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the perfil
+     */
+    public String getPerfil() {
+        return perfil;
+    }
+
+    /**
+     * @param perfil the perfil to set
+     */
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
     }
 
 }

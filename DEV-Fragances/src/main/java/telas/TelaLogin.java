@@ -6,13 +6,18 @@ package telas;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import models.Dados;
 
 /**
  *
  * @author giancarlomarques
  */
 public class TelaLogin extends javax.swing.JFrame {
-
+    private Dados msdados;
+    
+    public void setDados (Dados msDados){
+        this.msdados = msdados;
+    }
     /**
      * Creates new form TelaAdmin
      */
@@ -122,28 +127,28 @@ public class TelaLogin extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(300, 300, 300)
+                        .addGap(233, 233, 233)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(353, Short.MAX_VALUE))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel4)
-                .addGap(88, 88, 88)
+                .addGap(145, 145, 145)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1030, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
         );
 
         pack();
@@ -161,13 +166,13 @@ public class TelaLogin extends javax.swing.JFrame {
             
         }
         else if (txtLogin.getText().equalsIgnoreCase("") || txtSenha.getPassword().length == 0) {
-            JOptionPane.showMessageDialog(null, "Campos Vazios");
+            JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos");
 
         } else {
             dispose(); // Fecha o JFrame atual
 
             //Abre o novo 
-            TelaProdutos newFrame = new TelaProdutos();
+            viewAdmin newFrame = new viewAdmin();
             //   newFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Fecha apenas o JFrame secundário
             newFrame.setVisible(true);
         }

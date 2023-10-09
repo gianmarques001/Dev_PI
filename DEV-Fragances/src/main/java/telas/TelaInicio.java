@@ -64,8 +64,6 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\tigor\\Downloads\\Logo.png")); // NOI18N
-
         btnTelaEstoque.setBackground(new java.awt.Color(27, 0, 75));
         btnTelaEstoque.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         btnTelaEstoque.setForeground(new java.awt.Color(255, 255, 255));
@@ -86,24 +84,24 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(162, Short.MAX_VALUE)
+                .addContainerGap(258, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnTelaCadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTelaAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTelaEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTelaAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(314, 314, 314))
+                    .addComponent(btnTelaCadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(224, 224, 224))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(131, 131, 131)
+                .addGap(166, 166, 166)
                 .addComponent(btnTelaAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(49, 49, 49)
                 .addComponent(btnTelaEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addGap(53, 53, 53)
                 .addComponent(btnTelaCadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -140,7 +138,11 @@ public class TelaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTelaAdminActionPerformed
 
     private void btnTelaEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTelaEstoqueActionPerformed
-        // TODO add your handling code here:
+        viewEstoque telaEstoque = new viewEstoque();
+
+        dispose();
+
+        telaEstoque.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_btnTelaEstoqueActionPerformed
 
     /**
