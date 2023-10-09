@@ -13,6 +13,20 @@ public class Usuario {
     private String perfil;
     protected String senha;
 
+    public Usuario(String id, String nome, String cpf, String email, String perfil, String senha) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.perfil = perfil;
+        this.senha = senha;
+    }
+    
+    
+
+    public Usuario(){}
+    
+    
     public String getNome() {
         return nome;
     }

@@ -7,6 +7,8 @@ package telas;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import models.Dados;
+import models.Usuario;
+import telas.TelaCadastrarUsuario;
 
 /**
  *
@@ -169,6 +171,15 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void btnEntrarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarAdminActionPerformed
         // TODO add your handling code here:
+        Usuario login = new Usuario();
+        Usuario senha = new Usuario();
+        login.getEmail();
+        senha.getSenha();
+        
+        
+        
+        
+
         if(txtLogin.getText().equals("admin") && new String( txtSenha.getPassword()).equals("admin")){
             JOptionPane.showMessageDialog(null, "Logado com sucesso!");
             
@@ -178,6 +189,17 @@ public class TelaLogin extends javax.swing.JFrame {
             telaAdm.setVisible(true);
             
         }
+        
+        else if(txtLogin.getText().equals(login) && new String (txtSenha.getPassword()).equals(senha)){
+            JOptionPane.showMessageDialog(null, "Logado com sucesso!");
+            
+            dispose();
+            
+            viewAdmin telaAdm = new viewAdmin();
+            telaAdm.setVisible(true);
+        
+        }
+        
         else if (txtLogin.getText().equalsIgnoreCase("") || txtSenha.getPassword().length == 0) {
             JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos");
 
@@ -190,7 +212,7 @@ public class TelaLogin extends javax.swing.JFrame {
             newFrame.setVisible(true);
         }
 
-
+        
     }//GEN-LAST:event_btnEntrarAdminActionPerformed
 
     private void btnRetornarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornarActionPerformed
@@ -228,6 +250,7 @@ public class TelaLogin extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        Preferences.userNodeForPackage(c)
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
