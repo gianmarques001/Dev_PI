@@ -101,8 +101,6 @@ public class frmUsuarios extends javax.swing.JInternalFrame {
             }
         });
 
-        jTextField1.setText("jTextField1");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -171,7 +169,7 @@ public class frmUsuarios extends javax.swing.JInternalFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 254, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 252, Short.MAX_VALUE)
                 .addComponent(btnRetornar)
                 .addContainerGap())
         );
@@ -184,6 +182,8 @@ public class frmUsuarios extends javax.swing.JInternalFrame {
         
         usuario.setEmail(txtEmail.getText());// TODO add your handling code here:
         usuario.setSenha(jTextField1.getText());
+        usuario.setId(txtId.getText());
+        usuario.setNome(txtNome.getText());
         
         if(rp.salvar(usuario)){
             JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso!");

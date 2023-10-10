@@ -7,7 +7,6 @@ package telas;
 import javax.swing.JOptionPane;
 import models.Usuario;
 import Repositorio.RepositorioUsuario;
-import Repositorio.iRepositorioUsuario;
 
 /**
  *
@@ -129,7 +128,7 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnRetornar)))
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addContainerGap(202, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,6 +176,7 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
 
     private void btnCadastrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarUsuarioActionPerformed
         Usuario usuario = new Usuario();
+        
         
         usuario.setEmail(txtEmailUsuario.getText());// TODO add your handling code here:
         usuario.setSenha(txtSenha.getText());

@@ -10,8 +10,9 @@ package models;
  */
 public class Produto {
     private String id;
+    private String nome;
     private int qtd;
-    private float preco;
+    private int preco;
 
     /**
      * @return the id
@@ -44,15 +45,29 @@ public class Produto {
     /**
      * @return the preco
      */
-    public float getPreco() {
+    public int getPreco() {
         return preco;
     }
 
     /**
      * @param preco the preco to set
      */
-    public void setPreco(float preco) {
+    public void setPreco(int preco) {
         this.preco = preco;
+    }
+
+    /**
+     * @return the nome
+     */
+    public String getNome() {
+        return nome;
+    }
+
+    /**
+     * @param nome the nome to set
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
     }
     
     

@@ -60,7 +60,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabel1.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
-        jLabel1.setText("Admin:");
+        jLabel1.setText("Login:");
 
         jLabel2.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
         jLabel2.setText("Senha:");
@@ -148,7 +148,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnRetornar)))
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,7 +156,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(145, 145, 145)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
                 .addComponent(btnRetornar)
                 .addContainerGap())
         );
@@ -165,11 +165,11 @@ public class TelaLogin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1030, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
         );
 
         pack();
@@ -190,25 +190,6 @@ public class TelaLogin extends javax.swing.JFrame {
             viewAdmin telaAdm = new viewAdmin();
             telaAdm.setVisible(true);
             
-        }
-        
-        else if(txtLogin.getText().equals(login) && new String (txtSenha.getText()).equals(senha)){
-            JOptionPane.showMessageDialog(null, "Logado com sucesso!");
-            
-            dispose();
-            
-            viewAdmin telaAdm = new viewAdmin();
-            telaAdm.setVisible(true);
-        
-        }
-        
-        else if(txtLogin.getText().equals(rp.retornarTodos()) && txtSenha.getText().equals(rp.retornarTodos())  ){
-            JOptionPane.showMessageDialog(null, "Logado com sucesso!");
-            
-            dispose();
-            
-            viewAdmin telaAdm = new viewAdmin();
-            telaAdm.setVisible(true);
         }
         
         

@@ -35,14 +35,14 @@ public class viewUsuariosCadastrados extends javax.swing.JDialog {
     private void exibeInformacoes(){
         ArrayList<Usuario> users = rp.retornarTodos();
         
-        for(int i = 0; i > 500; i--){
+        for(int i = 0; i < 500; i++){
             tblUsuarios.setValueAt("", i, 0);
             tblUsuarios.setValueAt("", i, 1);
         }
         
         for(int i = 0; i < users.size(); i++){
-            tblUsuarios.setValueAt(users.get(i).getEmail(), i, 0);
-            tblUsuarios.setValueAt(users.get(i).getSenha(), i, 1);
+            tblUsuarios.setValueAt(users.get(i).getId(), i, 0);
+            tblUsuarios.setValueAt(users.get(i).getEmail(), i, 1);
         }
     }
 
@@ -273,7 +273,7 @@ public class viewUsuariosCadastrados extends javax.swing.JDialog {
                 {null, null}
             },
             new String [] {
-                "Email", "Senha"
+                "Id", "E-mail"
             }
         ));
         tblUsuarios.setToolTipText("");
@@ -285,7 +285,7 @@ public class viewUsuariosCadastrados extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1109, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnSair)))
@@ -294,10 +294,10 @@ public class viewUsuariosCadastrados extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 593, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSair)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
