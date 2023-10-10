@@ -15,40 +15,23 @@ import models.Usuario;
 
 
 
-public class RepositorioUsuario implements iRepositorioUsuario{
+public class RepositorioUsuario{
     
-    List<Usuario> listarUsuarios = new ArrayList<Usuario>();
+    private ArrayList<Usuario> user = new ArrayList<>();
     
-    
-    
-    
-    @Override
-    
-    public boolean salvarUsuario(Usuario usuario){
+    public boolean salvar (Usuario s){
+        if (s != null){
+            user.add(s);
+            return true;
+        }else{
+        return false;
+    }
         
-        try {listarUsuarios.add(usuario);
-            
-        } catch (Exception e) {
-            return false;
-        }
-        return true;
     }
     
-    @Override
-    public boolean deletarUsuario(String id){
-        return false;
+    public ArrayList<Usuario> retornarTodos(){
+        return user;
     }
-    
-    public List<Usuario> listarUsuario(){
-        return null;
-    }
-    
-    public boolean alterarUsuario(Usuario usuario){
-    
-        return false;
-    }
-    
-    
-    
+
     
 }

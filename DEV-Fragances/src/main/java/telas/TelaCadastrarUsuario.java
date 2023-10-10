@@ -14,7 +14,7 @@ import Repositorio.iRepositorioUsuario;
  * @author tigor
  */
 public class TelaCadastrarUsuario extends javax.swing.JFrame {
-
+    RepositorioUsuario rp = new RepositorioUsuario();
     /**
      * Creates new form TelaEstoqueV
      */
@@ -176,12 +176,14 @@ public class TelaCadastrarUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarUsuarioActionPerformed
-        Usuario user = new Usuario();
+        Usuario usuario = new Usuario();
         
-        String login = txtEmailUsuario.getText();
-        String senha = txtSenha.getText();
+        usuario.setEmail(txtEmailUsuario.getText());// TODO add your handling code here:
+        usuario.setSenha(txtSenha.getText());
         
-        JOptionPane.showMessageDialog(null, "Usuario criado com sucesso, seu email é: "+ login + " sua senha é: "+ senha);
+        if(rp.salvar(usuario)){
+            JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso!");
+        }else{JOptionPane.showMessageDialog(null, "O cadastro não foi completado");}
     }//GEN-LAST:event_btnCadastrarUsuarioActionPerformed
 
     private void txtNomeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeUsuarioActionPerformed
