@@ -1,0 +1,10 @@
+
+- Troca de input normal para um input de senha na tela de login
+- Feita a validação de dados na hora de entrar como administrador e quando for algum criar produto.
+- Adicionado também um "atalho" de tecla, no input referente a senha da tela de login, apertando a tecla ENTEr irá fazer a mesma funcionalidade do botão ENTRAR. 
+- Removindo a pasta repositórios e os arquivos referentes a essa pasta.
+- Criado uma nova pasta chamado DAO, onde ficará os arquivos que farão conexão com o banco de dados.
+- Criado as telas de listagem de produto e edição de produto.
+- Alguns ajustes feitos em relação a disposição dos componentes nas telas.
+
+

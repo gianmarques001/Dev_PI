@@ -1,0 +1,16 @@
+create database perfumaria;
+
+use perfumaria;
+
+
+create table produto(
+	idProduto int auto_increment primary key not null,
+	nomeProduto varchar(40) not null,
+	qtdProduto int not null,
+	precoProduto decimal(5,2) not null,
+	categoria varchar(40) not null
+);
+	
+	
+Para conseguir realizar os cadastros dos produtos, você deve alterar 24 e 25 do arquivo ProductDAO.java e inserir o seu usuário e sua respectiva senha.
+
