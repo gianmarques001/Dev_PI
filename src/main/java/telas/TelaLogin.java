@@ -177,8 +177,8 @@ public class TelaLogin extends javax.swing.JFrame {
     private void btnEntrarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarAdminActionPerformed
 
         String login = txtLogin.getText();
-        String senha = txtSenha.getText();
-        if (txtLogin.getText().equals("admin") && new String(txtSenha.getText()).equals("admin")) {
+        String senha = String.valueOf(txtSenha.getPassword());
+        if (txtLogin.getText().equals("admin") && senha.equals("admin")) {
             JOptionPane.showMessageDialog(null, "Logado com sucesso!");
             dispose();
             viewAdmin telaAdm = new viewAdmin();
@@ -186,10 +186,10 @@ public class TelaLogin extends javax.swing.JFrame {
         } else if (txtLogin.getText().equalsIgnoreCase("") || txtSenha.getText().length() == 0) {
             JOptionPane.showMessageDialog(null, "Campos em brancos");
 
-        } else {
+        } else{
             JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos");
             txtLogin.setText("");
-            txtSenha.setText("");
+         
 
         }
 
@@ -208,26 +208,23 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void btnEntrarAdminKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEntrarAdminKeyPressed
         // TODO add your handling code here:
+ String login = txtLogin.getText();
+        String senha = String.valueOf(txtSenha.getPassword());
+        if (txtLogin.getText().equals("admin") && senha.equals("admin")) {
+            JOptionPane.showMessageDialog(null, "Logado com sucesso!");
+            dispose();
+            viewAdmin telaAdm = new viewAdmin();
+            telaAdm.setVisible(true);
+        } else if (txtLogin.getText().equalsIgnoreCase("") || txtSenha.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campos em brancos");
 
-        // enter
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        } else{
+            JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos");
+            txtLogin.setText("");
+         
 
-            String login = txtLogin.getText();
-            String senha = txtSenha.getText();
-            System.out.println(senha);
-            if (txtLogin.getText().equals("admin") && new String(txtSenha.getText()).equals("admin")) {
-                JOptionPane.showMessageDialog(null, "Logado com sucesso!");
-                dispose();
-                viewAdmin telaAdm = new viewAdmin();
-                telaAdm.setVisible(true);
-            } else if (txtLogin.getText().equalsIgnoreCase("") || txtSenha.getText().length() == 0) {
-                JOptionPane.showMessageDialog(null, "Campos em brancos");
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos");
-                dispose(); // Fecha o JFrame atual
-            }
         }
+      
     }//GEN-LAST:event_btnEntrarAdminKeyPressed
 
     private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
@@ -235,21 +232,22 @@ public class TelaLogin extends javax.swing.JFrame {
         // enter
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
 
-            String login = txtLogin.getText();
-            String senha = txtSenha.getText();
-            System.out.println(senha);
-            if (txtLogin.getText().equals("admin") && new String(txtSenha.getText()).equals("admin")) {
-                JOptionPane.showMessageDialog(null, "Logado com sucesso!");
-                dispose();
-                viewAdmin telaAdm = new viewAdmin();
-                telaAdm.setVisible(true);
-            } else if (txtLogin.getText().equalsIgnoreCase("") || txtSenha.getText().length() == 0) {
-                JOptionPane.showMessageDialog(null, "Campos em brancos");
+           String login = txtLogin.getText();
+        String senha = String.valueOf(txtSenha.getPassword());
+        if (txtLogin.getText().equals("admin") && senha.equals("admin")) {
+            JOptionPane.showMessageDialog(null, "Logado com sucesso!");
+            dispose();
+            viewAdmin telaAdm = new viewAdmin();
+            telaAdm.setVisible(true);
+        } else if (txtLogin.getText().equalsIgnoreCase("") || txtSenha.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Campos em brancos");
 
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos");
-                dispose(); // Fecha o JFrame atual
-            }
+        } else{
+            JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos");
+            txtLogin.setText("");
+         
+
+        }
         }
 
 

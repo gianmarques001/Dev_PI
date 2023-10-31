@@ -20,6 +20,7 @@ public class Produto {
     }
 
     public Produto(int id, String nome, long preco, int qtd, String categoria) {
+        this.id = id;
         this.nomeProduto = nome;
         this.precoProduto = preco;
         this.qtdProduto = qtd;

@@ -43,8 +43,8 @@ public class ProdutoDAO {
                     + "VALUES (?, ?, ?, ?)", +PreparedStatement.RETURN_GENERATED_KEYS);
 
             comandoSQL.setString(1, produto.getNomeProduto());
-            comandoSQL.setDouble(2, produto.getPrecoProduto());
-            comandoSQL.setInt(3, produto.getQtdProduto());
+            comandoSQL.setInt(2, produto.getQtdProduto());
+            comandoSQL.setDouble(3, produto.getPrecoProduto());
             comandoSQL.setString(4, produto.getCategoriaProduto());
             int linhasAfetadas = comandoSQL.executeUpdate();
             if (linhasAfetadas > 0) {
@@ -114,39 +114,73 @@ public class ProdutoDAO {
         boolean atualizado = false;
         Connection conexao = null;
         PreparedStatement comandoSQL = null;
-       
+
         try {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
             conexao = DriverManager.getConnection(urlDB, login, senha);
             System.out.println("Conectado");
             comandoSQL = conexao.prepareStatement("UPDATE produto set precoProduto=?, qtdProduto=? WHERE idProduto=?");
-            
+
             comandoSQL.setDouble(1, produto.getPrecoProduto());
             comandoSQL.setInt(2, produto.getQtdProduto());
-            comandoSQL.setInt(3, produto.getId() +1);
-        
+            comandoSQL.setInt(3, produto.getId());
+
             int linhasAfetadas = comandoSQL.executeUpdate();
             if (linhasAfetadas > 0) {
- 
+
                 atualizado = true;
             }
-            
-            
-            
-            
-            
-            
-            
-            
 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
         return atualizado;
     }
 
+    public static boolean excluirProduto(int id) {
+
+        boolean atualizado = false;
+        Connection conexao = null;
+        PreparedStatement comandoSQL = null;
+
+        try {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conexao = DriverManager.getConnection(urlDB, login, senha);
+            System.out.println("Conectado");
+            comandoSQL = conexao.prepareStatement(
+                    "DELETE FROM produto WHERE idProduto = ?");
+
+            comandoSQL.setInt(1, id);
+
+            int linhasAfetadas = comandoSQL.executeUpdate();
+            if (linhasAfetadas > 0) {
+
+                atualizado = true;
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                conexao.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        return atualizado;
+    }
 }

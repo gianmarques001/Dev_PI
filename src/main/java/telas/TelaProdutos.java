@@ -6,6 +6,7 @@ package telas;
 
 import daos.ProdutoDAO;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import models.Produto;
 import models.Produtos;
@@ -21,6 +22,7 @@ public class TelaProdutos extends javax.swing.JFrame {
      */
     public TelaProdutos() {
         initComponents();
+
     }
 
     /**
@@ -37,6 +39,9 @@ public class TelaProdutos extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnAtualizar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
+        txtCodProd = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         jPopupMenu1.setComponentPopupMenu(jPopupMenu1);
 
@@ -103,22 +108,48 @@ public class TelaProdutos extends javax.swing.JFrame {
             }
         });
 
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+
+        txtCodProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodProdActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("<html>\nDigite o cod para excluir\n</html>");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 805, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtCodProd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(12, 12, 12))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(btnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addContainerGap(29, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCodProd, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -136,24 +167,22 @@ public class TelaProdutos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
         ArrayList<Produto> listaProdutos = ProdutoDAO.listarProdutos();
-         
+
         System.out.println("Linha: " + jTable1.getSelectedRow());
-       
-        
+
         Produto produto = listaProdutos.get(jTable1.getSelectedRow());
-        
-        if (produto.equals(null)){
+
+        if (produto == null) {
             System.out.println("produto não existe");
         } else {
-             TelaProduto telaProduto = new TelaProduto(produto);
-             telaProduto.setVisible(true);
+            this.dispose();
+            TelaProduto telaProduto = new TelaProduto(produto);
+            telaProduto.setVisible(true);
         }
-        
-        
-       
 
 
     }//GEN-LAST:event_jTable1MouseClicked
@@ -166,6 +195,7 @@ public class TelaProdutos extends javax.swing.JFrame {
         model.setRowCount(0);
 
         for (Produto produto : listaProdutos) {
+            System.out.println("id " + produto.getId());
             model.addRow(new String[]{
                 String.valueOf(produto.getId()),
                 String.valueOf(produto.getNomeProduto()),
@@ -177,6 +207,32 @@ public class TelaProdutos extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnAtualizarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        // TODO add your handling code here:
+
+        String codProd = txtCodProd.getText();
+
+        if (codProd.trim().equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Campo em branco. Por favor informe o código do produto.");
+        } else {
+
+            int cod = Integer.parseInt(codProd);
+            boolean retorno = ProdutoDAO.excluirProduto(cod);
+
+            if (retorno) {
+                JOptionPane.showMessageDialog(rootPane, "Sucesso!");
+                
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Falha!");
+            }
+
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void txtCodProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodProdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodProdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,9 +280,12 @@ public class TelaProdutos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtualizar;
+    private javax.swing.JButton btnExcluir;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField txtCodProd;
     // End of variables declaration//GEN-END:variables
 }

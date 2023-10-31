@@ -14,20 +14,22 @@ import models.Produto;
  */
 public class TelaProduto extends javax.swing.JFrame {
 
+    Produto p1 = null;
     /**
      * Creates new form TelaProduto
      */
-    static Produto p1;
+  
 
     public TelaProduto(Produto produto) {
 
         initComponents();
-
+        
+        this.p1 = produto;
         txtNomeProduto.setText(produto.getNomeProduto());
         txtPrecoProduto.setText(String.valueOf(produto.getPrecoProduto()));
         txtQtdProduto.setValue(produto.getQtdProduto());
 
-        setProduto(produto);
+       
 
     }
 
@@ -87,10 +89,6 @@ public class TelaProduto extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(171, 171, 171)
-                .addComponent(txtNomeProduto)
-                .addGap(0, 173, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -105,14 +103,18 @@ public class TelaProduto extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtQtdProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                     .addComponent(txtPrecoProduto))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtNomeProduto)
+                .addGap(153, 153, 153))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(40, 40, 40)
                 .addComponent(txtNomeProduto)
-                .addGap(64, 64, 64)
+                .addGap(63, 63, 63)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -142,27 +144,21 @@ public class TelaProduto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    public Produto getProduto() {
-        return p1;
-    }
-
-    public void setProduto(Produto produto) {
-        p1 = produto;
-    }
+   
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Produto produto = getProduto();
+       
 
         int novaQtd = (int) txtQtdProduto.getValue();
         long novoPreco = (long) txtPrecoProduto.getValue();
 
-        produto.setPrecoProduto(novoPreco);
-        produto.setQtdProduto(novaQtd);
+        p1.setPrecoProduto(novoPreco);
+        p1.setQtdProduto(novaQtd);
 
-        System.out.println(produto.toString());
+        System.out.println(p1.toString());
 
-        boolean retornoBanco = ProdutoDAO.atualizarProduto(produto);
+        boolean retornoBanco = ProdutoDAO.atualizarProduto(p1);
         if (retornoBanco) {
             JOptionPane.showMessageDialog(rootPane, "Produto Atualizado: ");
 

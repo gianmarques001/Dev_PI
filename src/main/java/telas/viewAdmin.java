@@ -219,13 +219,14 @@ public class viewAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+     
         TelaCadastrarProduto telaCadProd = new TelaCadastrarProduto();
-
         telaCadProd.setVisible(true);    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        
         TelaProdutos telaProdutos = new TelaProdutos();
         telaProdutos.setVisible(true); 
         telaProdutos.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
