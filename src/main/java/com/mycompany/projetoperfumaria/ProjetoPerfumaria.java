@@ -2,7 +2,7 @@
 package com.mycompany.projetoperfumaria;
 
 
-import models.Usuario;
+import models.Cliente;
 import telas.TelaInicio;
 
 

@@ -4,18 +4,16 @@
  */
 package telas;
 
-import javax.swing.JFrame;
-
 /**
  *
- * @author giancarlomarques
+ * @author tigor
  */
-public class TelaInicio extends javax.swing.JFrame {
+public class TelaSobre extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaInicio
+     * Creates new form viewSobre
      */
-    public TelaInicio() {
+    public TelaSobre() {
         initComponents();
     }
 
@@ -29,42 +27,41 @@ public class TelaInicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnTelaAdmin = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(219, 182, 238));
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMinimumSize(new java.awt.Dimension(1024, 600));
 
         jPanel1.setBackground(new java.awt.Color(219, 182, 238));
-        jPanel1.setForeground(new java.awt.Color(153, 255, 0));
 
-        btnTelaAdmin.setBackground(new java.awt.Color(27, 0, 75));
-        btnTelaAdmin.setFont(new java.awt.Font("Gabriola", 0, 18)); // NOI18N
-        btnTelaAdmin.setForeground(new java.awt.Color(255, 255, 255));
-        btnTelaAdmin.setText("Acessar como Administrador");
-        btnTelaAdmin.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        btnTelaAdmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTelaAdminActionPerformed(evt);
-            }
-        });
+        jLabel1.setFont(new java.awt.Font("Gabriola", 0, 36)); // NOI18N
+        jLabel1.setText("Somos a DEV Fragances");
+
+        jLabel2.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
+        jLabel2.setText("<html> Uma das principais empresas do setor de beleza no mundo, a DEV Fragances - multinacional de origem francesa (1904) -  trabalha no Brasil com vasto e icônico portifólio, oferecendo produtos nos segmentos de esmaltes, fragrâncias, cuidados capilares, corporais e masculinos, entre outras categorias. Localmente,  fabricamos e comercializamos milhões de produtos todos os anos, de nossas tradicionais marcas brasileiras - como Risqué, Monange, Bozzano, Paixão, Cenoura&Bronze e outras muito conhecidas pelos brasileiros.  Além disso, também comercializamos nossas fragrâncias internacionais, licenciadas de famosas marcas (Calvin Klein, Boss, Chloé, Burberry, Gucci, Tiffany, entre outras). No país, o Grupo Coty opera com as empresas Coty e Savoy,  empregando cerca de 2,3 mil funcionários e conta com 5 unidades nos estados de São Paulo, Goiás e Rio de Janeiro.  </html  ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(237, 237, 237)
-                .addComponent(btnTelaAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
-                .addGap(245, 245, 245))
+                .addContainerGap(149, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(110, 110, 110))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(404, 404, 404))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(173, 173, 173)
-                .addComponent(btnTelaAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(403, Short.MAX_VALUE))
+                .addGap(63, 63, 63)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -79,18 +76,7 @@ public class TelaInicio extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnTelaAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTelaAdminActionPerformed
-       
-        dispose(); // Fecha o JFrame atual
-        //Abre o novo 
-        TelaLogin telaLogin = new TelaLogin();
-  
-        telaLogin.setVisible(true);
-        
-    }//GEN-LAST:event_btnTelaAdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,26 +95,28 @@ public class TelaInicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaSobre.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaSobre.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaSobre.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaSobre.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaInicio().setVisible(true);
+                new TelaSobre().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnTelaAdmin;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

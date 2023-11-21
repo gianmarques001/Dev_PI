@@ -4,10 +4,7 @@
  */
 package models;
 
-/**
- *
- * @author tigor
- */
+
 public class Produto {
 
     private int id;

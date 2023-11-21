@@ -3,22 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package telas;
-
-import daos.ProdutoDAO;
-import java.util.ArrayList;
+import java.util.*;
+import daos.ClienteDAO;
 import javax.swing.JOptionPane;
-import models.Produto;
+import models.Cliente;
 
 /**
  *
  * @author giancarlomarques
  */
-public class TelaCadastrarProduto extends javax.swing.JFrame {
+public class TelaCadastrarCliente extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaCadastrarProduto
      */
-    public TelaCadastrarProduto() {
+    public TelaCadastrarCliente() {
         initComponents();
     }
 
@@ -34,37 +33,24 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblNomeProduto = new javax.swing.JLabel();
-        txtPrecoProduto = new javax.swing.JFormattedTextField();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         btnCadastrarProduto = new javax.swing.JButton();
-        spiQtdProduto = new javax.swing.JSpinner();
         btnRetornar = new javax.swing.JButton();
-        txtNomeProduto = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txtCategorias = new javax.swing.JComboBox<>();
+        txtEmail = new javax.swing.JTextField();
+        txtNomeCliente = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(219, 182, 238));
 
         jLabel1.setFont(new java.awt.Font("Gabriola", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Cadastrar Produto");
+        jLabel1.setText("Cadastrar cliente");
 
         lblNomeProduto.setFont(new java.awt.Font("Gabriola", 0, 14)); // NOI18N
-        lblNomeProduto.setForeground(new java.awt.Color(0, 0, 0));
-        lblNomeProduto.setText("Nome do Produto:");
-
-        txtPrecoProduto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
+        lblNomeProduto.setText("Nome do cliente");
 
         jLabel4.setFont(new java.awt.Font("Gabriola", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Quantidade do Produto:");
-
-        jLabel5.setFont(new java.awt.Font("Gabriola", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Preço do Produto:");
+        jLabel4.setText("Email:");
 
         btnCadastrarProduto.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         btnCadastrarProduto.setText("Cadastrar");
@@ -75,8 +61,6 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
             }
         });
 
-        spiQtdProduto.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-
         btnRetornar.setText("Retornar");
         btnRetornar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,13 +68,9 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Categoria do Produto:");
-
-        txtCategorias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Corpo e Banho", "Maquiagem", "Cabelos", "Skincare", " " }));
-        txtCategorias.addActionListener(new java.awt.event.ActionListener() {
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCategoriasActionPerformed(evt);
+                txtEmailActionPerformed(evt);
             }
         });
 
@@ -101,7 +81,7 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(425, 425, 425)
                 .addComponent(jLabel1)
-                .addContainerGap(437, Short.MAX_VALUE))
+                .addContainerGap(451, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addComponent(btnRetornar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -109,50 +89,42 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
                 .addComponent(btnCadastrarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(324, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblNomeProduto)
-                    .addComponent(jLabel4)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel5)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtCategorias, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtPrecoProduto, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(spiQtdProduto, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addGap(309, 309, 309))
+                    .addComponent(jLabel4))
+                .addGap(21, 21, 21)
+                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(297, 297, 297))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addContainerGap(413, Short.MAX_VALUE)
+                    .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(299, 299, 299)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(104, Short.MAX_VALUE)
+                .addContainerGap(110, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnCadastrarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnRetornar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(53, 53, 53)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblNomeProduto)
-                            .addComponent(txtNomeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(59, 59, 59)
+                        .addComponent(lblNomeProduto)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(spiQtdProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(txtPrecoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtCategorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(222, 222, 222)))
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(305, 305, 305)))
                 .addGap(29, 29, 29))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(209, 209, 209)
+                    .addComponent(txtNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(388, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -171,32 +143,24 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
 
     private void btnCadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarProdutoActionPerformed
 
-        ArrayList<String> categorias = new ArrayList<String>();
-        categorias.add("Corpo e Banho");
-        categorias.add("Maquiagem");
-        categorias.add("Cabelos");
-        categorias.add("Skincare");
-
         try {
-            String nome = txtNomeProduto.getText();
-            long preco = (long) txtPrecoProduto.getValue();
-            int quantidade = (int) spiQtdProduto.getValue();
-            int indexCategoria = txtCategorias.getSelectedIndex();
-            String categoria = categorias.get(indexCategoria);
-
-            if (nome.trim().equals("") || preco < 0) {
+            String nome = txtNomeCliente.getText();
+            
+            String email = txtEmail.getText();
+            
+            if (nome.trim().equals("") || email.trim().equals("")) {
                 JOptionPane.showMessageDialog(null, "Campos em brancos");
             } else {
 
-                Produto novoProduto = new Produto(nome, preco, quantidade, categoria);
+                Cliente novoCliente = new Cliente(nome, email);
 
-                JOptionPane.showMessageDialog(null, "Produto Cadastrado.");
-                System.out.println(novoProduto.toString());
+                JOptionPane.showMessageDialog(null, "Cliente Cadastrado.");
+                System.out.println(novoCliente.toString());
 
                 // Salva o produto no banco de dados
-                boolean retornoBanco = ProdutoDAO.salvarProduto(novoProduto);
+                boolean retornoBanco = ClienteDAO.salvarCliente(novoCliente);
                 if (retornoBanco) {
-                    JOptionPane.showMessageDialog(rootPane, "Sucesso: " + novoProduto.getId());
+                    JOptionPane.showMessageDialog(rootPane, "Sucesso: " + novoCliente.getIdCliente());
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "Erro");
                 }
@@ -221,9 +185,9 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnRetornarActionPerformed
 
-    private void txtCategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriasActionPerformed
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCategoriasActionPerformed
+    }//GEN-LAST:event_txtEmailActionPerformed
 
     
    
@@ -244,20 +208,21 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCadastrarProduto().setVisible(true);
+                new TelaCadastrarCliente().setVisible(true);
             }
         });
     }
@@ -266,14 +231,10 @@ public class TelaCadastrarProduto extends javax.swing.JFrame {
     private javax.swing.JButton btnCadastrarProduto;
     private javax.swing.JButton btnRetornar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblNomeProduto;
-    private javax.swing.JSpinner spiQtdProduto;
-    private javax.swing.JComboBox<String> txtCategorias;
-    private javax.swing.JTextField txtNomeProduto;
-    private javax.swing.JFormattedTextField txtPrecoProduto;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtNomeCliente;
     // End of variables declaration//GEN-END:variables
 }

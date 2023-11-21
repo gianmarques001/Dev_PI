@@ -6,13 +6,10 @@ package models;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author giancarlomarques
- */
+
 public class Produtos {
     
-     //Produto(1, "Lancôme",QUANTIDADE, 20.00);
+  
     ArrayList<Produto> produtos;
     public Produtos(){
         this.produtos = new ArrayList<Produto>();

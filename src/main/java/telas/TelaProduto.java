@@ -165,7 +165,7 @@ public class TelaProduto extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(rootPane, "Erro ao Atualizar");
         }
-        TelaProdutos telaProdutos = new TelaProdutos();
+        TelaListarProdutos telaProdutos = new TelaListarProdutos();
         dispose();
         telaProdutos.setVisible(true);
 
